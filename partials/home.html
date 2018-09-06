@@ -1,0 +1,111 @@
+<section class="bg-light" id="present">
+  <div class="container">
+    <div class="diag-section-content">
+        <div id="showresp">
+            <section id="joinactions">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-8 col-lg-offset-2 text-center" ng-if="!msg">
+                            <div class="subtitle text-muted text-center">
+                                As a presenter, please fill out the following information. <br /><br />
+                                This will be used for attendees to connect with you after they hear your minute at the mic. You will be 
+								given a presenter number that they will use to find you. Upon completion of this form, you will receive
+								an email with instructions for how to submit any PowerPoint, video or images within your one-minute.
+                            </div>
+                        </div>
+                        <div ng-show="msg" ng-bind-html="renderHtml(msg)"></div>
+                    </div><!-- end row -->
+                </div> <!-- end container -->
+            </section>
+
+            <section id="form">
+                <div class="container">
+                    <div class="row">
+                        <!--- form row begins -->
+                        <div class="col-lg-8 col-lg-offset-2 text-center">
+                            <form id="presFrm" name="presFrm" class="form" novalidate ng-if="!msg">
+                                <input type="hidden" ng-model="prsntr.post_actions"
+                                       ng-init="prsntr.post_actions='joinacts'"/>
+                                <div class="row">
+                                    <div class="form-group col-xs-12 has-feedback">
+                                        <label class="sr-only" for="name">your name</label>
+                                        <input type="text" class="form-control"
+                                               id="name" placeholder=" Give Me Your Name Name" name="nameline"
+                                               ng-model="prsntr.nameline" required/>
+                                        <p class="text-danger"
+                                           ng-show="presFm.nameline.$touched && presFm.nameline.$error.required">
+                                            Your name is required
+                                        </p>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="form-group col-xs-12 has-feedback">
+                                        <label class="sr-only" for="email">email</label>
+                                        <input type="email" class="form-control" id="email"
+                                               placeholder=" Email" name="email"
+                                               ng-model="prsntr.email" ng-pattern="EMAIL_PATTERN" required/>
+                                        <p class="text-danger"
+                                           ng-show="presFm.email.$touched && presFm.email.$error.required">
+                                            The email is required and cannot be empty
+                                        </p>
+
+                                        <p class="text-danger"
+                                           ng-show="presFm.email.$dirty && presFm.email.$error.pattern">The input is
+                                            not a valid email address
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="form-group col-xs-12 has-feedback">
+                                        <label class="sr-only" for="email">email</label>
+                                        <input type="email" class="form-control" id="email"
+                                               placeholder=" Email" name="email"
+                                               ng-model="prsntr.email" ng-pattern="EMAIL_PATTERN" required/>
+                                        <p class="text-danger"
+                                           ng-show="presFm.email.$touched && presFm.email.$error.required">
+                                            The email is required and cannot be empty
+                                        </p>
+
+                                        <p class="text-danger"
+                                           ng-show="presFm.email.$dirty && presFm.email.$error.pattern">The input is
+                                            not a valid email address
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div id="success">
+                                        <div class="form-group col-xs-12">
+                                            <button type="submit" id="frmsbmt" class="btn btn-primary btn-xl wow tada"
+                                                    ng-disabled="presFm.$invalid" ng-click="submitFm(user)">
+                                                Get Started<i class="fa fa-send"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                                <div class="row">
+                                    <div class="form-group col-xs-12">
+                                        <small><i>
+                                            Should your interests change, you can easily unsubscribe at any time.</i>
+                                        </small>
+                                    </div>
+                                    <div class="form-group col-xs-12">
+                                        <i class="fa fa-asterisk fa-2x"></i><b>Contact Information</b>: This
+                                        private, special section of the site provides you with cutting edge ideas
+                                        tailored to your strengths and needs.
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <!--- end form -->
+                </div>
+            </section>
+        </div>
+        <!-- end of show response div -->
+    </div>
+    <!-- end map/form zoom -->
+</div>
+</section>

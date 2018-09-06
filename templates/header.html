@@ -1,0 +1,30 @@
+<nav id="mainNav" class="navbar navbar-default navbar-fixed-top"
+     ng-class="{'affix-top': scrollPos < 100, 'affix': scrollPos >100}" scroll>
+    <div class="container-fluid" ng-class="{'bg-primary' : checkbg}" >
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" ng-init="isCollapsed = true" ng-click="isCollapsed = !isCollapsed">
+            <!--<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">-->
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand " href="#/" ng-click="scrollTo('mainNav')"> Making Your Life Count</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="navbar-collapse" id="bs-example-navbar-collapse-1" ng-class="{collapse: isCollapsed}">
+            <ul class="nav navbar-nav navbar-right">
+                <li><a  href="#/about" data-target="#about">About</a></li>
+                <li><a  href="#/devos" data-target="#devos">Devos</a></li>
+				<li><a  href="#/chat" data-target="#chat">Chat</a></li>
+                <li><a  href="http://makingyourlifecountradio.org" target="_blank">Radio</a></li>
+                <li><a  href="#/resources" data-target="#resources">Resources</a></li>
+                <li><a class="page-scroll" href="#/support" data-target="#support">Support</a></li>
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container-fluid -->
+</nav>
